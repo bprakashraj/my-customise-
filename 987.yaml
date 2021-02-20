@@ -1,0 +1,148 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-02-01T16:07:26Z"
+  labels:
+    run: testpod12
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:run: {}
+      f:spec:
+        f:containers:
+          k:{"name":"testpod11"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl-run
+    operation: Update
+    time: "2021-02-01T16:07:26Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.44.0.6"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-02-01T16:07:33Z"
+  name: testpod12
+  namespace: default
+  resourceVersion: "1036974"
+  selfLink: /api/v1/namespaces/default/pods/testpod11
+  uid: b0a265c1-8ea6-4141-a1c9-62c21d54ca47
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: testpod12
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-67q4x
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: labour1
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-67q4x
+    secret:
+      defaultMode: 420
+      secretName: default-token-67q4x
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-02-01T16:07:27Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-02-01T16:07:33Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-02-01T16:07:33Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-02-01T16:07:26Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://d991b6a5240107574c6b2ae4f9c98f03dab3f4cb24ccca790c4930109b9a171e
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:10b8cc432d56da8b61b070f4c7d2543a9ed17c2b23010b43af434fd40e2ca4aa
+    lastState: {}
+    name: testpod11
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-02-01T16:07:33Z"
+  hostIP: 10.166.0.3
+  phase: Running
+  podIP: 10.44.0.6
+  podIPs:
+  - ip: 10.44.0.6
+  qosClass: BestEffort
+  startTime: "2021-02-01T16:07:27Z"
